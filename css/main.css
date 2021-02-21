@@ -1,48 +1,107 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-* {font-family: Poppins;}
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+* {
+	font-family: Poppins;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+html {
+	color: #222;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+::-webkit-scrollbar {
+	width: 14px;
+	height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+	height: 6px;
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	background-color: var(--dark-500);
+	-webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+	box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: transparent;
+}
+
 
 [contenteditable]:focus {
-  outline: 0
+	outline: 0
 }
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
-/*c
- * A better looking default horizontal rule
- */
+#opts {
+	position: fixed;
+	background-color: var(--dark-400);
+	font-size: x-large;
+	bottom: 10px;
+	right: 6px;
+}
+
+.bg-custom-dark {
+	background-color: var(--dark-400);
+}
+
+#collapseExample {
+	position: fixed;
+	bottom: 70px;
+	right: 6px;
+	font-size: x-large;
+}
+/*
+
+#print {
+	bottom: 70px;
+	right: 6px;
+}
+
+#add-item {
+	bottom: 10px;
+	right: 6px;
+}
+
+#add-item:hover, #print:hover {
+	box-shadow: 0px 0 7px #141414;
+	transition: box-shadow 0.3s;
+}
+
+#add-item:active, #print:hover {
+	box-shadow: none;
+	background-color: var(--dark-600);
+} */
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+li[contenteditable] {
+	word-break: break-all;
 }
 
 /*
@@ -57,7 +116,7 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 /*
@@ -65,9 +124,9 @@ video {
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /*
@@ -75,7 +134,7 @@ fieldset {
  */
 
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 /* ==========================================================================
@@ -92,7 +151,7 @@ textarea {
 
 .hidden,
 [hidden] {
-  display: none !important;
+	display: none !important;
 }
 
 /*
@@ -105,16 +164,16 @@ textarea {
  */
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	/* 1 */
 }
 
 /*
@@ -125,13 +184,13 @@ textarea {
 
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	white-space: inherit;
+	width: auto;
 }
 
 /*
@@ -139,7 +198,7 @@ textarea {
  */
 
 .invisible {
-  visibility: hidden;
+	visibility: hidden;
 }
 
 /*
@@ -156,12 +215,12 @@ textarea {
 
 .clearfix::before,
 .clearfix::after {
-  content: " ";
-  display: table;
+	content: " ";
+	display: table;
 }
 
 .clearfix::after {
-  clear: both;
+	clear: both;
 }
 
 /* ==========================================================================
@@ -171,14 +230,14 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+	/* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+	/* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -188,71 +247,91 @@ textarea {
    ========================================================================== */
 
 @media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+	*,
+	*::before,
+	*::after {
+		background: #fff !important;
+		color: #000 !important;
+		/* Black prints faster */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
 
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
+	a[href]::after {
+		content: " ("attr(href) ")";
+	}
 
-  /*
+	abbr[title]::after {
+		content: " ("attr(title) ")";
+	}
+
+	/*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
+	a[href^="#"]::after,
+	a[href^="javascript:"]::after {
+		content: "";
+	}
 
-  pre {
-    white-space: pre-wrap !important;
-  }
+	pre {
+		white-space: pre-wrap !important;
+	}
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
 
-  /*
+	/*
    * Printing Tables:
    * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  thead {
-    display: table-header-group;
-  }
+	thead {
+		display: table-header-group;
+	}
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
 
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }
 
+@media print {
+	.no-print, .collapse, #opts {
+		display: none;
+	}
+
+	.link-body {
+		text-decoration: none;
+		font-style: italic;
+		position: fixed;
+		left: 50%;
+		transform: translate(-50%, 0);
+		font-size: xx-small;
+		z-index: 2;
+	}
+
+	.link-body:before {
+		content: "Made with "
+	}
+}
