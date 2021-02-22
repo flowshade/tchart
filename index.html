@@ -12,6 +12,7 @@
 	<meta property="og:image" content="">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yanchokraev/grayshift@1.0.0/css/grayshift.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.2.1/font/bootstrap-icons.css" crossorigin="anonymous">
 
 	<!-- <link rel="manifest" href="site.webmanifest"> -->
 	<!-- <link rel="apple-touch-icon" href="icon.png"> -->
@@ -61,11 +62,21 @@
 			</div>
 		</section>
 		<section class="container" id="items">
-			<div class="row" onclick="deleteItem(this)">
+			<div class="row">
 				<div class="col border-right">
-					<div class="card d-block w-100 p-3 my-3">
-						<p contenteditable>Claim</p>
-					</div>
+                    <div class="row">
+                        <div class="col-1 no-print p-0">
+                            <div class="card p-3 w-100 mx-0 my-3" data-delete="true" data-delete-e="card">
+                                <i class="bi bi-trash text-danger" data-delete="true"></i>
+                            </div>
+                        </div>
+                        <div class="col-11">
+                            <div class="card p-3 mx-0 my-3">
+                                <p contenteditable>Claim</p>
+                            </div>
+                        </div>
+                    </div>
+					
 				</div>
 				<div class="col border-left">
 					<div class="card p-2 my-3">

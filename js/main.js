@@ -1,27 +1,19 @@
 $(document).ready(() => {
-    $("#add-item").click(() => {
-        fetch('../templates/item.html')
-        .then(response => response.text())
-        .then(data => $("#items").append(data));
-    })
+  $("#add-item").click(() => {
+    fetch("../templates/item.html")
+      .then((response) => response.text())
+      .then((data) => $("#items").append(data));
+  });
 
-    let ctrlIsPressed = false;
+  $(document).click((e) => {
+      let element = e.target
+      if (element.getAttribute("data-delete") === "true") {
+          if (element.getAttribute("data-delete-e") === "card") {
+            $(element).parent().parent().parent().parent().css({display: "none"})
+          } else {
+            $(element).parent().parent().parent().parent().parent().css({display: "none"})
+          }
+      }
+  })
 
-    $(document).keydown((e) => {
-        if(e.which == "17") {
-            ctrlIsPressed = true;
-        }
-    });
-    
-    $(document).keyup(() => {
-        ctrlIsPressed = false;
-    });
-
-    window.deleteItem = (item) => {
-        if(ctrlIsPressed) {
-            if (confirm("Are you sure you want to delete this item?")) {
-                item.parentNode.removeChild(item);
-            }
-        }
-    }
-})
+});
